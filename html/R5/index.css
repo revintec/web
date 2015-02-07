@@ -1,0 +1,98 @@
+/*FallbackUserClientKitttttttttttttty*/
+#MainMain.FUCK{background-image:url(img/KCUF.png);}
+#MainMain.FUCK *{display:none;}
+#MainMain{
+    position: relative;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid #000;*/
+    margin: 0px auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#MainMain .Scroller{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+#MainMain .MaskFallback{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+#MainMain .Pointer{
+    position: absolute;
+    background-image: url(img/Pointer.png);
+    background-size: 100% 100%;
+    width: 16%;
+    height: 20%;
+    pointer-events: none;
+}
+#MainMain .Hint{
+    position: absolute;
+    display: none;
+    background-image: url(img/Hint.png);
+    background-size: 100% 100%;
+    left: 85%;
+    top: 45%;
+    width: 10%;
+    height: 10%;
+    pointer-events: none;
+}
+#MainMain .Hint2{
+    position: absolute;
+    background-image: url(img/Hint2.png);
+    background-size: 100% 100%;
+    left: 65%;
+    top: 38%;
+    width: 30%;
+    height: 25%;
+    pointer-events: none;
+}
+#MainMain .Map{
+    position: absolute;
+    background: url(img/Map.jpg);
+    background-size: 100% 100%;
+}
+#MainMain .Snap1{
+    position: absolute;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-image: url(img/Snap1.png);
+}
+#MainMain .Snap2{
+    position: absolute;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-image: url(img/Snap2.png);
+}
+#MainMain .Bear{
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    background-image: url(img/Walkies.png);
+}
+#MainMain .BearParts{
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(0px,-0.5px);
+    -webkit-transform: translate(0px,-0.5px);
+    z-index: 2;
+    background-image: url(img/Walkies.png);
+}
+#MainMain .More{
+    display: block;
+    position: absolute;
+    background-image: url(img/More.png);
+    background-size: 100% 100%;
+    width: 30.4%;
+    height: 10.6%;
+    right: 0%;
+    bottom: 0%;
+}

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+
+        <title>R4</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <div class="FPS"></div>
+        <div class="ContainerMain">
+            <div class="ViewMain"></div>
+            <div class="TargetTest"></div>
+            <div class="TM">Demo made by revin,Cao</div>
+        </div>
+        <a class="CLINK" href="/R1">fallback to 2D</a>
+        <div class="Description">
+            开始->加载低分辨率小文件->加载1/8即可开始显示,同时后台继续下载剩余部分
+                    (如果大屏幕)->同时后台加载高分辨率大文件->加载完成替换^
+            可以给用户提供渐进式的体验,又兼顾网络接口速率,如果仍不能满足需求,可切换至<a href="/R1">2D版本</a>
+
+            数据量与具体纹理有关系,可以人工优化
+            地图数据可以针对其特点进行优化
+
+            图中显示的艳青色原点是动态计算出的热点
+
+            针对Demo:
+                低分辨率文件约为300KB,其1/8为40K,预计即使在2G下加载时间也可以接受
+                高分辨率文件由于色彩和图形复杂,约为1MB.可以判断屏幕尺寸,低分辨率屏不需要此文件
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

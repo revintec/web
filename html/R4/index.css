@@ -1,0 +1,35 @@
+.ContainerMain{
+    -webkit-tap-highlight-color: transparent;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+.ViewMain{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(image.bin);
+}
+.TargetTest{
+    position: absolute;
+    display: none;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    background: #0cf;
+}
+.TM{
+    position: absolute;
+    margin: 0.3em 0.8em;
+    right: 0px;
+    bottom: 0px;
+    pointer-events: none;
+}
+.CLINK{
+    display: block;
+    text-align: center;
+}
+.Description{
+    white-space: pre;
+}

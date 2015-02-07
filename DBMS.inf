@@ -1,0 +1,56 @@
+.bail on
+
+.open users.db
+CREATE TABLE if not exists users(id INTEGER PRIMARY KEY,username UNIQUE NOT NULL,password NOT NULL,status,signon,signin,session UNIQUE);
+CREATE INDEX if not exists iusers on users (username,session);
+CREATE TABLE if not exists acls (id INTEGER PRIMARY KEY,userid NOT NULL,perm NOT NULL,UNIQUE(userid,perm));
+CREATE INDEX if not exists iacls on acls(userid);
+
+.open userprefs.db
+CREATE TABLE if not exists userprefs(id INTEGER PRIMARY KEY,userid UNIQUE NOT NULL,consumerid);
+CREATE INDEX if not exists iuserprefs on userprefs(userid);
+
+.open consumers.db
+CREATE TABLE if not exists consumers(id INTEGER PRIMARY KEY,nickname,telephone,address,UNIQUE(nickname,telephone,address));
+
+.open comments.db
+CREATE TABLE if not exists comments(id INTEGER PRIMARY KEY,datetime,userid,nickname,content);
+CREATE INDEX if not exists icomments on comments(datetime);
+
+.open votes.db
+CREATE TABLE if not exists events(id INTEGER PRIMARY KEY,userid,title);
+CREATE TABLE if not exists votes(id INTEGER PRIMARY KEY,userid,event,ext,UNIQUE(userid,event));
+
+.open menus.db
+CREATE TABLE if not exists producers(id INTEGER PRIMARY KEY,name UNIQUE NOT NULL);
+CREATE TABLE if not exists producerview(id INTEGER PRIMARY KEY,userid NOT NULL,producerid NOT NULL,UNIQUE(userid,producerid));
+CREATE TABLE if not exists couriers(id INTEGER PRIMARY KEY,userid UNIQUE NOT NULL,name UNIQUE NOT NULL);
+CREATE TABLE if not exists foodcatas(id INTEGER PRIMARY KEY,name);
+CREATE TABLE if not exists foods(id INTEGER PRIMARY KEY,name NOT NULL,cata,tags,UNIQUE(name,cata));
+CREATE TABLE if not exists menus(id INTEGER PRIMARY KEY,producerid NOT NULL,foodid NOT NULL,cost NOT NULL,price NOT NULL,cata,tags,UNIQUE(producerid,foodid));
+CREATE TABLE if not exists recoms(id INTEGER PRIMARY KEY,menuid UNIQUE NOT NULL,weight);
+
+.open orders.db
+CREATE TABLE if not exists orders(
+        id INTEGER PRIMARY KEY,
+        batch,                      -- batch number
+        cost,                       -- original cost
+        price,                      -- charge
+        turnover,                   -- how much money collected
+        status,                     -- pending/producing/delivering/finished/rejected/cancelled
+        initialTime,                -- when this order was seen by the server
+        acceptionTime,              -- time in minutes before the order was accepted by the producer
+        productionTime,             -- time in minutes used to produce this order
+        deliveryTime,               -- time in minutes used to delivery this order
+        finalizationTime,           -- when this order was finalized(finished/rejected/cancelled)
+        userid,
+        consumerid,
+        foodid,
+        extraRequest,
+        requestedDeliverytime,
+        requestedProducerid,
+        producerid,
+        courierid);
+CREATE INDEX if not exists iorders on orders(status);
+
+
